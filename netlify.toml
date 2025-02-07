@@ -1,6 +1,6 @@
 [build]
 base = "/"
-command = "pnpm build"
+command = "pnpm install && pnpm build"
 publish = "kiosk/dist"
 functions = "kiosk-functions"
 
@@ -8,21 +8,18 @@ functions = "kiosk-functions"
 NODE_VERSION = "22"
 
 [context.production]
-command = "pnpm build"
+command = "pnpm install && pnpm build"
 
 [context.deploy-preview]
-command = "pnpm build"
+command = "pnpm install && pnpm build"
 
 [context.branch-deploy]
-command = "pnpm build"
+command = "pnpm install && pnpm build"
 
 [[redirects]]
 from = "/*"
 to = "/index.html"
 status = 200
-
-[functions]
-directory = "kiosk-functions/"
 
 [[headers]]
 for = "/*"

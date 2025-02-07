@@ -1,8 +1,7 @@
 {
   "name": "kiosk-functions",
   "scripts": {
-    "dev": "netlify dev",
-    "build": "netlify build"
+    "dev": "netlify dev"
   },
   "dependencies": {
     "@netlify/functions": "^3.0.0",
