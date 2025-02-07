@@ -4,9 +4,10 @@ import Parser from "rss-parser";
 async function getFeed() {
   const parser = new Parser();
   const feed = await parser.parseURL("https://thehappybroadcast.com/feed");
-  return feed.items
-    .slice(0, 3)
-    .map(({ title, contentSnippet }) => ({ title, content: contentSnippet }));
+  return feed.items.slice(0, 4).map(({ title, contentSnippet }) => ({
+    title,
+    content: contentSnippet.split("[…]")[0] + "...",
+  }));
 }
 
 const handler: Handler = async () => {

@@ -1,49 +1,55 @@
 ---
 import BaseLayout from '../layouts/Layout.astro';
 import { HappyBroadcast }from '../components/happy-broadcast'
+import { Calendar }from '../components/calendar'
 import Card from '../components/Card.astro';
 import 'animate.css';
 /* These headers in Astro are executed "server-side" (at build time) */
 ---
 <BaseLayout>
   <div class="h-full flex flex-col items-center justify-center overflow-auto xl:overflow-hidden">
-    <div class="m-auto grid gap-2 grid-cols-2 auto-rows-[15vh] sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-12 sm:pl-4 sm:pr-4 sm:pt-4 xl:pt-0 w-full">
+    <div class="m-auto grid gap-4 grid-cols-2 auto-rows-[15vh] sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-12 sm:pl-4 sm:pr-4 sm:pt-4 xl:pt-0 w-full">
+      <Card
+          colSpan="col-span-3"
+          rowSpan="row-span-6"
+          bgColor="bg-purple"
+          animate="animate__animated animate__fadeInLeft"
+      >
+        <HappyBroadcast client:only="react" />
+      </Card>
+
       <Card
         splineURL="https://prod.spline.design/xhmQI7TSgMg6QUmB/scene.splinecode"
-        colSpan="col-span-2 sm:col-span-4 md:col-span-6 lg:col-span-8" 
+        colSpan="col-span-9"
         rowSpan="row-span-2" 
         bgColor="bg-yellow"
         animate="animate__animated animate__fadeInDown"
       />
+
+      <Card
+          splineURL="https://prod.spline.design/NUtHk2ICzhI1zxOz/scene.splinecode"
+          colSpan="col-span-4"
+          rowSpan="row-span-2"
+          bgColor="bg-black"
+          animate="animate__animated animate__fadeIn"
+      />
+
       <Card
         splineURL="https://prod.spline.design/HazKhRxlpG0TXM71/scene.splinecode"
-        colSpan="col-span-2 sm:col-span-4 md:col-span-6 lg:col-span-4" 
-        rowSpan="row-span-1 lg:row-span-4" 
+        colSpan="col-span-5"
+        rowSpan="row-span-2"
         bgColor="bg-green"
-        animate="animate__animated animate__fadeInRight animate__delay-1s"
+        animate="animate__animated animate__fadeInRight"
       />
+
       <Card
-        colSpan="col-span-2 sm:col-span-4 md:col-span-6 lg:col-span-4"
-        rowSpan="row-span-2 lg:row-span-4" 
-        bgColor="bg-purple"
+        colSpan="col-span-9"
+        rowSpan="row-span-2"
+        bgColor="bg-blue"
+        animate="animate__animated animate__fadeInUp"
       >
-        <HappyBroadcast client:only="react"/>
-        <!--animate="animate__animated animate__fadeInLeft animate__delay-3s"-->
+        <Calendar client:only="react" />
       </Card>
-      <Card
-        splineURL="https://prod.spline.design/NUtHk2ICzhI1zxOz/scene.splinecode"
-        colSpan="col-span-2 sm:col-span-4 md:col-span-6 lg:col-span-4"
-        rowSpan="row-span-1 sm:row-span-2" 
-        bgColor="bg-black"
-        animate="animate__animated animate__fadeIn animate__delay-4s"
-      />
-      <Card
-        splineURL="https://prod.spline.design/4XBnFG-MxIEVKxLr/scene.splinecode"
-        colSpan="col-span-2 sm:col-span-4 md:col-span-6 lg:col-span-8"
-        rowSpan="row-span-1 sm:row-span-2" 
-        bgColor="bg-red"
-        animate="animate__animated animate__fadeInUp animate__delay-2s"
-      />
     </div>
   </div>
 </BaseLayout>

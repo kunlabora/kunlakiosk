@@ -7,6 +7,7 @@
     "@netlify/functions": "^3.0.0",
     "netlify": "13.3.3",
     "netlify-cli": "18.0.4",
-    "rss-parser": "^3.13.0"
+    "rss-parser": "^3.13.0",
+    "ts-ics": "^1.6.7"
   }
 }

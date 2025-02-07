@@ -70,6 +70,9 @@ importers:
       rss-parser:
         specifier: ^3.13.0
         version: 3.13.0
+      ts-ics:
+        specifier: ^1.6.7
+        version: 1.6.7(date-fns@4.1.0)(lodash@4.17.21)(zod@3.24.1)
 
 packages:
 
@@ -2173,6 +2176,9 @@ packages:
   data-uri-to-buffer@4.0.1:
     resolution: {integrity: sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==}
     engines: {node: '>= 12'}
+
+  date-fns@4.1.0:
+    resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
 
   debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -5062,6 +5068,13 @@ packages:
   trough@2.2.0:
     resolution: {integrity: sha512-tmMpK00BjZiUyVyvrBK7knerNgmgvcV/KLVyuma/SC+TQN167GrMRciANTz09+k3zW8L8t60jWO1GpfkZdjTaw==}
 
+  ts-ics@1.6.7:
+    resolution: {integrity: sha512-j8+opqoX5VQqiH3fB7RE5sxV9NA1BNKZAEMZ7E6QmNGe+uz04bgA9/ydW0WpBsXSB3aYGkSqPvfW+9Y/Ylwueg==}
+    peerDependencies:
+      date-fns: ^4
+      lodash: ^4
+      zod: ^3
+
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
 
@@ -7775,6 +7788,8 @@ snapshots:
   cyclist@1.0.2: {}
 
   data-uri-to-buffer@4.0.1: {}
+
+  date-fns@4.1.0: {}
 
   debug@2.6.9:
     dependencies:
@@ -11270,6 +11285,12 @@ snapshots:
   triple-beam@1.4.1: {}
 
   trough@2.2.0: {}
+
+  ts-ics@1.6.7(date-fns@4.1.0)(lodash@4.17.21)(zod@3.24.1):
+    dependencies:
+      date-fns: 4.1.0
+      lodash: 4.17.21
+      zod: 3.24.1
 
   ts-interface-checker@0.1.13: {}
 
