@@ -14,7 +14,7 @@ DietPi staat ingesteld om Chromium in kiosk mode te starten op de webpagina hier
 Hiernaast runt er op de achtergrond (zie `/boot/dietpi/postboot`) een background scriptje. Dit script pingt elke minuut de Apple TV om te kijken of deze nog actief is. Zo niet stuurt de RPI een HDMI CEC signaal dat het kanaal terug wijzigt naar dat van de RPI.
 
 ### Contribute
-Pas de kiosk aan door de code onder `./webpage` aan te passen.
+Pas de kiosk aan door de code onder `./kiosk` aan te passen.
 
 ### Recreate OS
 // TODO: document full recreation 

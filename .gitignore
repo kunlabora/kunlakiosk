@@ -1,6 +1,7 @@
 ### Project-specific
 node_modules/
 .astro/
+dist/
 
 ### IntelliJ IDEA ###
 out/
@@ -32,3 +33,6 @@ bin/
 ### Mac OS ###
 .DS_Store
 
+
+# Local Netlify folder
+.netlify

@@ -1,0 +1,7 @@
+{
+  "name": "kunlakiosk-dietpi",
+
+  "scripts": {
+    "start": "echo \"No script yet\" && exit 1"
+  }
+}

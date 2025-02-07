@@ -1,0 +1,4 @@
+packages:
+  - 'dietpi'
+  - 'kiosk'
+  - 'kiosk-functions'

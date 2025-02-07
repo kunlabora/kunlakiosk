@@ -1,0 +1,11 @@
+{
+  "name": "kunlakiosk",
+  "scripts": {
+    "start": "pnpm -r --filter {./kiosk*}... --parallel dev",
+    "build": "pnpm -r --filter {./kiosk*}... --parallel build"
+  },
+  "devDependencies": {
+    "prettier": "3.4.2"
+  },
+  "author": "Gi11i4m"
+}

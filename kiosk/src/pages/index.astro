@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../layouts/Layout.astro';
+import { HappyBroadcast }from '../components/happy-broadcast'
 import Card from '../components/Card.astro';
 import 'animate.css';
 /* These headers in Astro are executed "server-side" (at build time) */
 ---
-
 <BaseLayout>
   <div class="h-full flex flex-col items-center justify-center overflow-auto xl:overflow-hidden">
     <div class="m-auto grid gap-2 grid-cols-2 auto-rows-[15vh] sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-12 sm:pl-4 sm:pr-4 sm:pt-4 xl:pt-0 w-full">
@@ -27,7 +27,7 @@ import 'animate.css';
         rowSpan="row-span-2 lg:row-span-4" 
         bgColor="bg-purple"
       >
-
+        <HappyBroadcast client:only="react"/>
         <!--animate="animate__animated animate__fadeInLeft animate__delay-3s"-->
       </Card>
       <Card
@@ -47,11 +47,3 @@ import 'animate.css';
     </div>
   </div>
 </BaseLayout>
-
-<script>
-/* Script tags in Astro are executed client-side */
-  import {HappyBroadcastService} from "../services/happy-broadcast.service";
-
-const happyFeed = await HappyBroadcastService.getFeed()
-console.log(happyFeed)
-</script>
