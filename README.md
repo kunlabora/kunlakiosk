@@ -31,10 +31,13 @@ arp -a # Scan devices on the local network
 
 ### TODO
 - [x] ~~Monitor Apple TV status (169.254.211.214, 3.0.0.0)~~
-- [ ] Verbindt RPI met het internet (hotspot temp)
+- [ ] Verbindt RPI met het internet
 - [x] ~~Auto switch naar RPI on standby~~
-- [ ] Kiosk webpagina maken (met auto-refresh)
+- [x] Kiosk webpagina maken
+- [ ] Auto-refresh kiosk data
+- [ ] Theme kiosk met Kunlabora theme colors
 - [ ] Kiosk webpagina als default instellen op DietPI
+- [ ] Navragen aan to2 welke modules acceptabel zijn en of website eventueel private moet zijn
 - [x] ~~Module: The Happy Broadcast~~
 - [ ] Module: Kunlabora events
 - [ ] Module: Kunlabora nieuws

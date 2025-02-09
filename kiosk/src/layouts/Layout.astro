@@ -6,17 +6,6 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Kunlakiosk</title>
-		<script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.51/build/spline-viewer.js"></script>
-		<script type="module">
-			document.addEventListener('DOMContentLoaded', () => {
-				const splineViewers = document.querySelectorAll('spline-viewer');
-				splineViewers.forEach(splineViewer => {
-					const logo = splineViewer.shadowRoot.querySelector('#logo');
-					if (!logo) return;
-					logo.remove();
-				});
-			});
-		</script>
 	</head>
 	<body>
 		<slot />
@@ -30,22 +19,5 @@
 		width: 100%;
 		height: 100vh;
 		background: linear-gradient(-45deg, #111111, #222222, #0c0a09, #0f172a);
-	    background-size: 400% 400%;
-	    animation: gradient 15s ease infinite;
-	    height: 100vh;
-	}
-	@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-	:root {
-		--animate-delay: 1s; ;
 	}
 </style>

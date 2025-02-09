@@ -22,15 +22,15 @@ export const HappyBroadcast: FunctionComponent = () => {
       {happyNews.map((news, index) => (
         <div
           key={index}
-          className="bg-white opacity-90 rounded-lg border border-gray-200 shadow-md"
+          className="bg-white opacity-90 rounded-lg border border-gray-200 shadow-md justify-between"
         >
           <div className="p-5">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
               {news.title}
             </h5>
-            <p className="mb-3 justify-self-center font-normal text-gray-700">
-              {news.content}
-            </p>
+            {/*<p className="mb-3 justify-self-center font-normal text-gray-700">*/}
+            {/*  {news.content}*/}
+            {/*</p>*/}
           </div>
         </div>
       ))}

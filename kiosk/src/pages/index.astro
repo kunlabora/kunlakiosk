@@ -1,10 +1,11 @@
 ---
+/* These headers in Astro are executed "server-side" (at build time) */
 import BaseLayout from '../layouts/Layout.astro';
 import { HappyBroadcast }from '../components/happy-broadcast'
 import { Calendar }from '../components/calendar'
 import Card from '../components/Card.astro';
-import 'animate.css';
-/* These headers in Astro are executed "server-side" (at build time) */
+import { Image } from 'astro:assets';
+import happyBroadcastLogo from '../../assets/happy-broadcast-logo.png';
 ---
 <BaseLayout>
   <div class="h-full flex flex-col items-center justify-center overflow-auto xl:overflow-hidden">
@@ -13,40 +14,30 @@ import 'animate.css';
           colSpan="col-span-3"
           rowSpan="row-span-6"
           bgColor="bg-purple"
-          animate="animate__animated animate__fadeInLeft"
       >
         <HappyBroadcast client:only="react" />
       </Card>
 
       <Card
-        splineURL="https://prod.spline.design/xhmQI7TSgMg6QUmB/scene.splinecode"
         colSpan="col-span-9"
         rowSpan="row-span-2" 
         bgColor="bg-yellow"
-        animate="animate__animated animate__fadeInDown"
-      />
+      >
+
+      </Card>
+
+      <Image src={happyBroadcastLogo} alt="The Happy Broadcast logo" className="col-span-3 row-span-2 h-full w-auto mx-auto"/>
 
       <Card
-          splineURL="https://prod.spline.design/NUtHk2ICzhI1zxOz/scene.splinecode"
-          colSpan="col-span-4"
-          rowSpan="row-span-2"
-          bgColor="bg-black"
-          animate="animate__animated animate__fadeIn"
-      />
-
-      <Card
-        splineURL="https://prod.spline.design/HazKhRxlpG0TXM71/scene.splinecode"
-        colSpan="col-span-5"
+        colSpan="col-span-6"
         rowSpan="row-span-2"
         bgColor="bg-green"
-        animate="animate__animated animate__fadeInRight"
       />
 
       <Card
         colSpan="col-span-9"
         rowSpan="row-span-2"
         bgColor="bg-blue"
-        animate="animate__animated animate__fadeInUp"
       >
         <Calendar client:only="react" />
       </Card>
