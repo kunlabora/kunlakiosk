@@ -17,9 +17,6 @@ export const Calendar: FunctionComponent = () => {
   }, []);
   return (
     <div className="p-2 w-full h-full">
-      <h1 className="mb-2 font-sans font-bold text-3xl text-black block">
-        Calendar
-      </h1>
       <div className="flex justify-between h-auto">
         {events.map((event, index) => {
           const date = new Date(event.start);

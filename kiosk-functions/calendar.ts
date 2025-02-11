@@ -3,9 +3,7 @@ import { icsCalendarToObject, VCalendar } from "ts-ics";
 
 async function getNextEvents() {
   // TODO: move to ENV before pushing!
-  return fetch(
-    "https://calendar.google.com/calendar/ical/gi11i4m%40gmail.com/public/basic.ics",
-  )
+  return fetch("")
     .then((res) => res.text())
     .then((text) => parseNextFiveEvents(icsCalendarToObject(text)));
 }

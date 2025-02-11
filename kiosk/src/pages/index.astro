@@ -5,14 +5,14 @@ import { HappyBroadcast }from '../components/happy-broadcast'
 import { Calendar }from '../components/calendar'
 import Card from '../components/Card.astro';
 import { Image } from 'astro:assets';
-import happyBroadcastLogo from '../../assets/happy-broadcast-logo.png';
+import kunlaboraLogo from '../assets/kunlabora_logo_white.png';
 ---
 <BaseLayout>
-  <div class="h-full flex flex-col items-center justify-center overflow-auto xl:overflow-hidden">
-    <div class="m-auto grid gap-4 grid-cols-2 auto-rows-[15vh] sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-12 sm:pl-4 sm:pr-4 sm:pt-4 xl:pt-0 w-full">
+  <div class="h-full w-full p-5 flex flex-col items-center justify-center overflow-hidden">
+    <div class="h-full w-full grid gap-5 grid-rows-3 grid-cols-12">
       <Card
           colSpan="col-span-3"
-          rowSpan="row-span-6"
+          rowSpan="row-span-3"
           bgColor="bg-purple"
       >
         <HappyBroadcast client:only="react" />
@@ -20,23 +20,23 @@ import happyBroadcastLogo from '../../assets/happy-broadcast-logo.png';
 
       <Card
         colSpan="col-span-9"
-        rowSpan="row-span-2" 
+        rowSpan="row-span-1"
         bgColor="bg-yellow"
       >
 
       </Card>
 
-      <Image src={happyBroadcastLogo} alt="The Happy Broadcast logo" className="col-span-3 row-span-2 h-full w-auto mx-auto"/>
+      <Image src={kunlaboraLogo} alt="The Happy Broadcast logo" className="col-span-3 row-span-1 h-full w-auto mx-auto"/>
 
       <Card
         colSpan="col-span-6"
-        rowSpan="row-span-2"
+        rowSpan="row-span-1"
         bgColor="bg-green"
       />
 
       <Card
         colSpan="col-span-9"
-        rowSpan="row-span-2"
+        rowSpan="row-span-1"
         bgColor="bg-blue"
       >
         <Calendar client:only="react" />

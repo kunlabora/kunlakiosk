@@ -4,12 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        yellow: "#FFFF99", // Aquí defines un color amarillo claro
-        purple: "#9A6EBB",
-        green: "#34D399",
-        red: "#E40039",
-        black: "#172554",
-        blue: "#2147ee",
+        yellow: "#f0d096",
+        purple: "#652cb3",
+        green: "#84d9a9",
+        red: "#f08c75",
+        black: "#546aec",
+        blue: "#80b0fb",
       },
     },
   },

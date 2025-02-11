@@ -1,5 +1,6 @@
 import { type FunctionComponent, useEffect, useState } from "react";
 import { BACKEND_URL } from "../env.ts";
+import happyBroadcastLogo from "../assets/happy-broadcast-logo.png";
 
 type HappyNewsItem = {
   title: string;
@@ -15,22 +16,21 @@ export const HappyBroadcast: FunctionComponent = () => {
       .then((json) => setHappyNews(json.items));
   }, []);
   return (
-    <div className="p-2 flex flex-col justify-between h-full">
-      <h1 className="font-sans font-bold text-3xl text-fuchsia-900 block">
-        Happy News
-      </h1>
+    <div className="p-2 flex flex-col justify-between">
+      <img
+        src={happyBroadcastLogo.src}
+        alt="The Happy Broadcast logo"
+        className="h-auto w-auto mb-5"
+      />
       {happyNews.map((news, index) => (
         <div
           key={index}
-          className="bg-white opacity-90 rounded-lg border border-gray-200 shadow-md justify-between"
+          className="mb-5 bg-white opacity-90 rounded-3xl border border-gray-200 shadow-md justify-between"
         >
           <div className="p-5">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+            <h5 className="text-2xl font-bold tracking-tight text-gray-900">
               {news.title}
             </h5>
-            {/*<p className="mb-3 justify-self-center font-normal text-gray-700">*/}
-            {/*  {news.content}*/}
-            {/*</p>*/}
           </div>
         </div>
       ))}
