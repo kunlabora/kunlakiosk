@@ -16,7 +16,7 @@ export const Calendar: FunctionComponent = () => {
       .then((json) => setEvents(json.events));
   }, []);
   return (
-    <div className="p-2 w-full h-full">
+    <div className="p-4 w-full h-full content-center">
       <div className="flex justify-between h-auto">
         {events.map((event, index) => {
           const date = new Date(event.start);
@@ -33,18 +33,17 @@ export const Calendar: FunctionComponent = () => {
           return (
             <div
               key={index}
-              className="block rounded-t rounded-b overflow-hidden bg-white text-center w-[10vw]"
+              className="block rounded-t rounded-b relative overflow-hidden bg-white text-center w-[10vw]"
             >
               <div className="bg-red text-white py-1">{shortMonth}</div>
-              <div className="pt-1 border-l border-r h-auto">
+              <div className="mb-9 pt-1 border-l border-r h-auto">
                 <span className="text-4xl font-bold mb-2">{dayIndex}</span>
                 <span className="font-bold block text-sm">{event.title}</span>
                 <span className="font-light block text-xs">
                   {event.location.replaceAll("\\n", ", ")}
                 </span>
               </div>
-              <div className="h-auto"></div>
-              <div className="mt-2 pb-2 px-2 rounded-   b flex justify-between">
+              <div className="absolute left-0 bottom-0 right-0 p-2 px-2 border-t flex justify-between">
                 <span className="text-xs font-bold">{day}</span>
                 <span className="text-xs font-bold">{year}</span>
               </div>
