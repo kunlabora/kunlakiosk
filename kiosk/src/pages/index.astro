@@ -1,46 +1,35 @@
 ---
 /* These headers in Astro are executed "server-side" (at build time) */
 import BaseLayout from '../layouts/Layout.astro';
-import { HappyBroadcast }from '../components/happy-broadcast'
-import { Calendar }from '../components/calendar'
-import Card from '../components/Card.astro';
-import { Image } from 'astro:assets';
+import {HappyBroadcast} from '../components/happy-broadcast'
+import {RequestForHelp} from '../components/request-for-help'
+import {Care} from '../components/care'
+import {Calendar} from '../components/calendar'
+import {Image} from 'astro:assets';
 import kunlaboraLogo from '../assets/kunlabora_logo_white.png';
 ---
 <BaseLayout>
-  <div class="h-full w-full p-5 flex flex-col items-center justify-center overflow-hidden">
-    <div class="h-full w-full grid gap-5 grid-rows-3 grid-cols-4">
-      <Card
-          colSpan="col-span-1"
-          rowSpan="row-span-3"
-          bgColor="bg-purple"
-      >
-        <HappyBroadcast client:only="react" />
-      </Card>
+    <div class="h-full w-full p-5 flex flex-col items-center justify-center overflow-hidden">
+        <div class="h-full w-full grid gap-5 grid-rows-3 grid-cols-4">
+            <div class="shadow-xl rounded-3xl p-4 col-span-1 row-span-3 bg-purple">
+                <HappyBroadcast client:only="react"/>
+            </div>
 
-      <Card
-        colSpan="col-span-3"
-        rowSpan="row-span-1"
-        bgColor="bg-yellow"
-      >
+            <div class="shadow-xl rounded-3xl p-4 col-span-3 row-span-1 bg-yellow">
+                <Care client:only="react" />
+            </div>
 
-      </Card>
+            <Image src={kunlaboraLogo}
+                   alt="The Happy Broadcast logo"
+                   class="shadow-xl rounded-3xl p-4 col-span-1 row-span-1 h-full w-auto mx-auto"/>
 
-      <Image src={kunlaboraLogo} alt="The Happy Broadcast logo" className="col-span-1 row-span-1 h-full w-auto mx-auto"/>
+            <div class="shadow-xl rounded-3xl p-4 col-span-2 row-span-1 bg-green content-center">
+                <RequestForHelp client:only="react"/>
+            </div>
 
-      <Card
-        colSpan="col-span-2"
-        rowSpan="row-span-1"
-        bgColor="bg-green"
-      />
-
-      <Card
-        colSpan="col-span-3"
-        rowSpan="row-span-1"
-        bgColor="bg-blue"
-      >
-        <Calendar client:only="react" />
-      </Card>
+            <div class="shadow-xl rounded-3xl p-4 col-span-3 row-span-1 bg-blue">
+                <Calendar client:only="react"/>
+            </div>
+        </div>
     </div>
-  </div>
 </BaseLayout>

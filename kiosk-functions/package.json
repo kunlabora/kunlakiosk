@@ -1,7 +1,7 @@
 {
   "name": "kiosk-functions",
   "scripts": {
-    "dev": "BROWSER=none netlify dev"
+    "dev": "dotenvx run -- netlify dev"
   },
   "dependencies": {
     "@netlify/functions": "^3.0.0",
@@ -10,5 +10,8 @@
     "netlify-cli": "18.0.4",
     "rss-parser": "^3.13.0",
     "ts-ics": "^1.6.7"
+  },
+  "devDependencies": {
+    "@dotenvx/dotenvx": "^1.35.0"
   }
 }

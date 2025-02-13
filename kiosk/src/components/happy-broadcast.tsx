@@ -1,5 +1,4 @@
 import { type FunctionComponent, useEffect, useState } from "react";
-import { BACKEND_URL } from "../env.ts";
 import happyBroadcastLogo from "../assets/happy-broadcast-logo.png";
 
 type HappyNewsItem = {
@@ -11,12 +10,13 @@ export const HappyBroadcast: FunctionComponent = () => {
   const [happyNews, setHappyNews] = useState<HappyNewsItem[]>([]);
 
   useEffect(() => {
-    fetch(`${BACKEND_URL}/happy-broadcast`)
+    fetch(`${import.meta.env.PUBLIC_BACKEND_URL}/happy-broadcast`)
       .then((res) => res.json())
       .then((json) => setHappyNews(json.items));
   }, []);
+
   return (
-    <div className="p-2 flex flex-col justify-between">
+    <div className="flex flex-col justify-between">
       <img
         src={happyBroadcastLogo.src}
         alt="The Happy Broadcast logo"
@@ -25,10 +25,14 @@ export const HappyBroadcast: FunctionComponent = () => {
       {happyNews.map((news, index) => (
         <div
           key={index}
-          className="mb-5 bg-white opacity-90 rounded-3xl border border-gray-200 shadow-md justify-between"
+          className="mb-5 opacity-90 rounded-[2rem] shadow-md justify-between"
+          style={{
+            background:
+              "linear-gradient(124deg, #ff3e26, #ffaf27, #F9D435, #91da7e, #55cfc8, #39bce9, #2c70cb)",
+          }}
         >
           <div className="p-5">
-            <h5 className="text-2xl font-bold tracking-tight text-gray-900">
+            <h5 className="text-2xl font-medium tracking-tight text-white">
               {news.title}
             </h5>
           </div>

@@ -2,6 +2,7 @@
 node_modules/
 .astro/
 dist/
+.env
 
 ### IntelliJ IDEA ###
 out/

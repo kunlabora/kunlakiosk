@@ -2,8 +2,7 @@ import { Handler } from "@netlify/functions";
 import { icsCalendarToObject, VCalendar } from "ts-ics";
 
 async function getNextEvents() {
-  // TODO: move to ENV before pushing!
-  return fetch("")
+  return fetch(process.env.CALENDAR_ID)
     .then((res) => res.text())
     .then((text) => parseNextFiveEvents(icsCalendarToObject(text)));
 }

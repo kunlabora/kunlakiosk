@@ -1,5 +1,4 @@
 import { type FunctionComponent, useEffect, useState } from "react";
-import { BACKEND_URL } from "../env.ts";
 
 type CalendarItem = {
   title: string;
@@ -11,10 +10,11 @@ export const Calendar: FunctionComponent = () => {
   const [events, setEvents] = useState<CalendarItem[]>([]);
 
   useEffect(() => {
-    fetch(`${BACKEND_URL}/calendar`)
+    fetch(`${import.meta.env.PUBLIC_BACKEND_URL}/calendar`)
       .then((res) => res.json())
       .then((json) => setEvents(json.events));
   }, []);
+
   return (
     <div className="p-4 w-full h-full content-center">
       <div className="flex justify-between h-auto">
